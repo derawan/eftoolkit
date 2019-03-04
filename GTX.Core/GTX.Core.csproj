@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2A97917-397C-47FC-A408-FC194F509278}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GTX.Core</RootNamespace>
+    <AssemblyName>GTX.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Configuration.3.3.0\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Owin.3.1.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.1.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.1.1\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFrameworkExtras.EF6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF6.1.0.0\lib\net45\EntityFrameworkExtras.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=4.55.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.4.55.0.0\lib\net45\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.7.0\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.7\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.3.0, Culture=neutral, PublicKeyToken=5692a4ecdffbe736, processorArchitecture=MSIL">
+      <HintPath>..\packages\ValueInjecter.3.1.3\lib\net45\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.5.1.0\lib\net45\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.5.1.0\lib\net45\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.5.1.0\lib\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.1.0\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.5.1.0\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.5.1.0\lib\net45\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Server, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Server.5.1.0\lib\net45\ServiceStack.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.1.0\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Westwind.Utilities, Version=3.0.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Westwind.Utilities.3.0.17\lib\net45\Westwind.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper\AutofacBootstrap.cs" />
+    <Compile Include="Bootstrapper\BaseBootstrap.cs" />
+    <Compile Include="Bootstrapper\BootStrapManager.cs" />
+    <Compile Include="Bootstrapper\Interface\IBootstrap.cs" />
+    <Compile Include="Connector\Interface\BaseRepositoryContext.cs" />
+    <Compile Include="Connector\Interface\EFDbRepositoryContext.cs" />
+    <Compile Include="Connector\Interface\GTXDbContext.cs" />
+    <Compile Include="Connector\Interface\IEntityFrameworkRepositoryContext.cs" />
+    <Compile Include="Connector\Interface\IRepositoryContext.cs" />
+    <Compile Include="Constant\Constant.cs" />
+    <Compile Include="Constant\GlobalErrorCode.cs" />
+    <Compile Include="Core\Commands\CommandResultTypes.cs" />
+    <Compile Include="Core\Commands\CommandTypes.cs" />
+    <Compile Include="Core\Commands\Dispatcher\BaseCommandBus.cs" />
+    <Compile Include="Core\Commands\Dispatcher\Interface\ICommandBus.cs" />
+    <Compile Include="Core\Commands\Handlers\BaseCommandHandler.cs" />
+    <Compile Include="Core\Commands\Handlers\Interface\ICommandHandler.cs" />
+    <Compile Include="Core\Commands\Handlers\Interface\IHandler.cs" />
+    <Compile Include="Core\Commands\Parameters\BaseCommand.cs" />
+    <Compile Include="Core\Commands\Parameters\BaseCommandFetchParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\BaseCommandParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\BaseModelCommandParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\Interface\IBaseCommandParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\Interface\ICommand.cs" />
+    <Compile Include="Core\Commands\Parameters\Interface\ICommandFetchParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\Interface\ICommandParameters.cs" />
+    <Compile Include="Core\Commands\Parameters\Interface\IQueryParameters.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseErrorExecuteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseErrorFetchResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseErrorResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteActivateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteAddResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteApproveResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteConfirmResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteDeactivateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteDeleteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecutePublishResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteRegisterResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteRejectResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteRemoveResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteRestoreResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteReviewResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteUnpublishResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteUnregisterResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseExecuteUpdateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseFetchResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\BaseResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IBaseResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IErrorExecuteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IErrorFetchResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IErrorResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteActivateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteAddResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteApproveResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteConfirmResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteDeactivateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteDeleteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecutePublishResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteRegisterResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteRejectResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteRemoveResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteRestoreResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteReviewResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteUnpublishResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteUnregisterResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IExecuteUpdateResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IFetchResultData.cs" />
+    <Compile Include="Core\Commands\ResultData\Interface\IResultData.cs" />
+    <Compile Include="Core\Commands\Results\BaseCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteActivateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteAddCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteApproveCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteConfirmCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteDeactivateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteDeleteCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecutePublishCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteRegisterCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteRejectCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteRemoveCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteRestoreCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteReviewCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteUnpublishCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteUnregisterCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseExecuteUpdateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseFetchCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\BaseResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IBaseResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\ICommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteActivateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteAddCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteApproveCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteConfirmCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteDeactivateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteDeleteCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecutePublishCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteRegisterCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteRejectCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteRemoveCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteRestoreCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteReviewCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteUnpublishCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteUnregisterCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IExecuteUpdateCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IFetchCommandResult.cs" />
+    <Compile Include="Core\Commands\Results\Interface\IResult.cs" />
+    <Compile Include="Core\Contexts\BaseApplicationContext.cs" />
+    <Compile Include="Core\Contexts\BaseAuthenticationContext.cs" />
+    <Compile Include="Core\Contexts\BaseContext.cs" />
+    <Compile Include="Core\Contexts\BaseRequestContext.cs" />
+    <Compile Include="Core\Contexts\Interface\IApplicationContext.cs" />
+    <Compile Include="Core\Contexts\Interface\IAuthenticationContext.cs" />
+    <Compile Include="Core\Contexts\Interface\IContext.cs" />
+    <Compile Include="Core\Contexts\Interface\IRequestContext.cs" />
+    <Compile Include="Core\Contexts\RequestContext.cs" />
+    <Compile Include="Core\Disposables\DisposableObjects.cs" />
+    <Compile Include="Core\Disposables\Interface\IDisposableObjects.cs" />
+    <Compile Include="Core\Events\EventDynamicArgs.cs" />
+    <Compile Include="Core\Exceptions\CommandHandlerExecuteException.cs" />
+    <Compile Include="Core\Exceptions\CommandHandlerNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\EntityAlreadyExistsException.cs" />
+    <Compile Include="Core\Exceptions\EntityNotFoundException.cs" />
+    <Compile Include="Core\Exceptions\ExecuteCommandException.cs" />
+    <Compile Include="Core\Exceptions\InvalidTokenException.cs" />
+    <Compile Include="Core\Exceptions\ParameterValidationException.cs" />
+    <Compile Include="Core\Interface\IError.cs" />
+    <Compile Include="Core\Validation\BaseValidationHandler.cs" />
+    <Compile Include="Core\Validation\Interface\IValidationHandler.cs" />
+    <Compile Include="Core\Validation\ValidationResult.cs" />
+    <Compile Include="DataAccess\Interface\BaseRepository.cs" />
+    <Compile Include="DataAccess\Interface\IRepository.cs" />
+    <Compile Include="Messages\BaseErrorMessages.cs" />
+    <Compile Include="Messages\BaseMessages.cs" />
+    <Compile Include="Messages\Interface\ICommonMessage.cs" />
+    <Compile Include="Messages\Interface\IErrorMessage.cs" />
+    <Compile Include="Messages\MessageType.cs" />
+    <Compile Include="Models\Base\BaseEntityModel.cs" />
+    <Compile Include="Models\Base\DataModels.cs" />
+    <Compile Include="Models\Base\ITenant.cs" />
+    <Compile Include="Models\Interface\IBaseModel.cs" />
+    <Compile Include="Models\Interface\IDataModels.cs" />
+    <Compile Include="Models\Interface\IModel.cs" />
+    <Compile Include="Models\Interface\IOrderable.cs" />
+    <Compile Include="Models\Interface\ISoftDeletes.cs" />
+    <Compile Include="Models\Interface\ISynchronizationItems.cs" />
+    <Compile Include="Models\Interface\ITreeNode.cs" />
+    <Compile Include="Models\Interface\Workflow\FlowProcessItems.cs" />
+    <Compile Include="Models\Interface\Workflow\IActivable.cs" />
+    <Compile Include="Models\Interface\Workflow\IApprovable.cs" />
+    <Compile Include="Models\Interface\Workflow\IConfirmable.cs" />
+    <Compile Include="Models\Interface\Workflow\IJournalEntity.cs" />
+    <Compile Include="Models\Interface\Workflow\IPublishable.cs" />
+    <Compile Include="Models\Interface\Workflow\IRegisterable.cs" />
+    <Compile Include="Models\Interface\Workflow\IReviewable.cs" />
+    <Compile Include="Models\Interface\Workflow\IWorkflowEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Compression\GTX_Compression_Utility.cs" />
+    <Compile Include="Utilities\Data\GTX_Data_Utility.cs" />
+    <Compile Include="Utilities\Encryption\AESEncryption.cs" />
+    <Compile Include="Utilities\Encryption\CaesarEncryption.cs" />
+    <Compile Include="Utilities\Encryption\CryptoString.cs" />
+    <Compile Include="Utilities\Encryption\DESEncryption.cs" />
+    <Compile Include="Utilities\Encryption\MD5.cs" />
+    <Compile Include="Utilities\Encryption\RSAEncryption.cs" />
+    <Compile Include="Utilities\Encryption\SHA1.cs" />
+    <Compile Include="Utilities\Encryption\SimpleEncryptor.cs" />
+    <Compile Include="Utilities\Encryption\TripleDESEncryption.cs" />
+    <Compile Include="Utilities\Encryption\VernamEncryption.cs" />
+    <Compile Include="Utilities\GTX_System_Utility.cs" />
+    <Compile Include="Utilities\LINQ\DynamicExpression.cs" />
+    <Compile Include="Utilities\LINQ\DynamicOrdering.cs" />
+    <Compile Include="Utilities\LINQ\DynamicQueryable.cs" />
+    <Compile Include="Utilities\LINQ\ExpressionParser.cs" />
+    <Compile Include="Utilities\LINQ\ParseException.cs" />
+    <Compile Include="Utilities\LINQ\PredicateBuilder.cs" />
+    <Compile Include="Utilities\Reflection\ClassFactory.cs" />
+    <Compile Include="Utilities\Reflection\DynamicClass.cs" />
+    <Compile Include="Utilities\Reflection\DynamicProperty.cs" />
+    <Compile Include="Utilities\Reflection\GTX_Reflection_Utility.cs" />
+    <Compile Include="Utilities\Reflection\Merge.cs" />
+    <Compile Include="Utilities\Reflection\Res.cs" />
+    <Compile Include="Utilities\Reflection\Signature.cs" />
+    <Compile Include="Utilities\Streams\GTX_Stream_Utility.cs" />
+    <Compile Include="Utilities\String\GTX_String_Utility.cs" />
+    <Compile Include="Utilities\Web\GTX_Email_Utility.cs" />
+    <Compile Include="Utilities\Web\GTX_HttpMethod.cs" />
+    <Compile Include="Utilities\Web\GTX_REST_Utility.cs" />
+    <Compile Include="Utilities\Web\GTX_Web_Utility.cs" />
+    <Compile Include="Web\IGTXHttpApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logging\" />
+    <Folder Include="Utilities\Culture\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Compare-NET-Objects-Help.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
